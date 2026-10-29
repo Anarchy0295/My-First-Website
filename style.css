@@ -83,3 +83,25 @@ footer {
     color: #94a3b8;
     padding: 20px;
 }
+
+.nav ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    padding: 0 24px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns:
+    repeat(3, 1fr);
+    gap: 24px;
+}
+
+.projects h2 {
+    grid-column: 1 / -1;
+}
+
+.projects .card {
+  margin-bottom: 0;
+}

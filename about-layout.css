@@ -1,12 +1,15 @@
-/* Give the About Me and My Goals cards equal width and height. */
+/* Keep the About Me and My Goals cards side by side, left-to-right, with even spacing. */
 main:has(> .card + .card) {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
     align-items: stretch;
 }
 
 main:has(> .card + .card) > .card {
     width: 100%;
     min-width: 0;
+    height: 100%;
 }
 
 @media (max-width: 700px) {

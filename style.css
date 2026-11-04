@@ -29,7 +29,14 @@ body {
         radial-gradient(ellipse at 88% 16%, rgba(57, 217, 255, 0.14), transparent 36%),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='64' viewBox='0 0 96 64'%3E%3Cpath d='M0 16 L16 4 L32 16 L48 4 L64 16 L80 4 L96 16 M0 48 L16 36 L32 48 L48 36 L64 48 L80 36 L96 48' fill='none' stroke='%2339d9ff' stroke-opacity='.18' stroke-width='1.5'/%3E%3C/svg%3E");
     background-size: auto, auto, 96px 64px;
+    background-position: 0 0, 0 0, 0 0;
     background-attachment: fixed;
+    animation: lightning-drift 24s linear infinite;
+}
+
+@keyframes lightning-drift {
+    from { background-position: 0 0, 0 0, 0 0; }
+    to { background-position: 0 0, 0 0, 96px 64px; }
 }
 
 p { color: #c4d0e2; line-height: 1.75; }
@@ -220,5 +227,6 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+    body { animation: none; }
     *, *::before, *::after { transition-duration: 0.01ms !important; }
 }

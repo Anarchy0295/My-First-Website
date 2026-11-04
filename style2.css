@@ -1,0 +1,44 @@
+main:has(> .card + .card) {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(220px, 0.8fr);
+    align-items: start;
+    gap: 24px;
+    width: min(100%, 1080px);
+    margin-inline: auto;
+}
+
+main:has(> .card + .card) > .card {
+    width: auto;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    main:has(> .card + .card) {
+        grid-template-columns: 1fr;
+    }
+}
+
+body {
+    position: relative;
+    isolation: isolate;
+    background-image:
+        radial-gradient(ellipse at 12% 0%, rgba(255, 79, 216, 0.16), transparent 38%),
+        radial-gradient(ellipse at 88% 16%, rgba(57, 217, 255, 0.14), transparent 36%);
+    animation: none;
+}
+
+body::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Cpath d='M275 -20 L250 105 L295 140 L222 265 L265 286 L180 445 L225 430 L158 590 L205 610 L115 810 L178 780 L150 930 M250 105 L165 145 L128 235 M222 265 L305 318 L340 395 M180 445 L105 480 L78 565 M158 590 L235 655 L260 730' fill='none' stroke='%2339d9ff' stroke-width='14' stroke-linecap='round' stroke-linejoin='round' opacity='.34'/%3E%3Cpath d='M275 -20 L250 105 L295 140 L222 265 L265 286 L180 445 L225 430 L158 590 L205 610 L115 810 L178 780 L150 930 M250 105 L165 145 L128 235 M222 265 L305 318 L340 395 M180 445 L105 480 L78 565 M158 590 L235 655 L260 730' fill='none' stroke='%23dffbff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' opacity='.9'/%3E%3C/svg%3E") 12% top / min(100vw, 1200px) 100vh no-repeat;
+    animation: lightning-flash 7s steps(1, end) infinite;
+}
+
+@keyframes lightning-flash {
+    0%, 88%, 92%, 100% { opacity: 0.12; }
+    89%, 91% { opacity: 0.75; }
+    90% { opacity: 0.3; }
+}

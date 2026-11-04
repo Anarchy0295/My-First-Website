@@ -1,0 +1,16 @@
+/* Give the About Me and My Goals cards equal width and height. */
+main:has(> .card + .card) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+main:has(> .card + .card) > .card {
+    width: 100%;
+    min-width: 0;
+}
+
+@media (max-width: 700px) {
+    main:has(> .card + .card) {
+        grid-template-columns: 1fr;
+    }
+}

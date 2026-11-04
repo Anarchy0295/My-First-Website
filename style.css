@@ -230,3 +230,64 @@ footer {
     body { animation: none; }
     *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
+
+main:has(> .card + .card) {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(220px, 0.8fr);
+    align-items: start;
+    gap: 24px;
+    width: min(100%, 1080px);
+    margin-inline: auto;
+}
+
+main:has(> .card + .card) > .card {
+    width: 100%;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    main:has(> .card + .card) {
+        grid-template-columns: 1fr;
+    }
+}
+
+body {
+    position: relative;
+    isolation: isolate;
+    background-image:
+        radial-gradient(ellipse at 12% 0%, rgba(255, 79, 216, 0.16), transparent 38%),
+        radial-gradient(ellipse at 88% 16%, rgba(57, 217, 255, 0.14), transparent 36%);
+    animation: none;
+}
+
+body::before {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 8vw;
+    width: min(42vw, 560px);
+    pointer-events: none;
+    content: "";
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 900' preserveAspectRatio='none'%3E%3Cpath d='M190 -20 L160 105 L205 145 L125 270 L168 290 L85 445 L130 430 L55 605 L103 625 L25 790 L80 770 L55 920 M160 105 L90 145 L55 235 M125 270 L205 325 L235 400 M85 445 L25 480 L0 555 M55 605 L130 670 L155 740' fill='none' stroke='%2339d9ff' stroke-width='13' stroke-linecap='round' stroke-linejoin='round' opacity='.45'/%3E%3Cpath d='M190 -20 L160 105 L205 145 L125 270 L168 290 L85 445 L130 430 L55 605 L103 625 L25 790 L80 770 L55 920 M160 105 L90 145 L55 235 M125 270 L205 325 L235 400 M85 445 L25 480 L0 555 M55 605 L130 670 L155 740' fill='none' stroke='%23e8fcff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center top / 100% 100% no-repeat;
+    filter: drop-shadow(0 0 8px rgba(57, 217, 255, 0.9));
+    opacity: 0.18;
+    animation: lightning-flash 7s steps(1, end) infinite;
+}
+
+body > header,
+body > main,
+body > footer {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes lightning-flash {
+    0%, 88%, 92%, 100% { opacity: 0.12; }
+    89%, 91% { opacity: 0.78; }
+    90% { opacity: 0.3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before { animation: none; }
+}

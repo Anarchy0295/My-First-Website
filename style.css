@@ -27,9 +27,8 @@ body {
     background-image:
         radial-gradient(ellipse at 12% 0%, rgba(255, 79, 216, 0.16), transparent 38%),
         radial-gradient(ellipse at 88% 16%, rgba(57, 217, 255, 0.14), transparent 36%),
-        linear-gradient(rgba(99, 145, 190, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(99, 145, 190, 0.045) 1px, transparent 1px);
-    background-size: auto, auto, 48px 48px, 48px 48px;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='64' viewBox='0 0 96 64'%3E%3Cpath d='M0 16 L16 4 L32 16 L48 4 L64 16 L80 4 L96 16 M0 48 L16 36 L32 48 L48 36 L64 48 L80 36 L96 48' fill='none' stroke='%2339d9ff' stroke-opacity='.18' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-size: auto, auto, 96px 64px;
     background-attachment: fixed;
 }
 

@@ -30,7 +30,6 @@ body {
         radial-gradient(ellipse at 88% 16%, rgba(57, 217, 255, 0.14), transparent 36%);
 }
 
-/* Full-screen layered bolts; the different timings create repeated, branching flashes. */
 body::before,
 body::after {
     position: fixed;
@@ -126,12 +125,26 @@ footer { width: min(100%, 1080px); margin: 0 auto; padding: 24px 12px 8px; color
 .project-card:hover { transform: translateY(-4px); border-color: rgba(255, 79, 216, .58); box-shadow: 0 14px 36px rgba(0, 0, 0, .34), var(--pink-glow), var(--blue-glow); }
 .project-card h3 { margin: 0 0 8px; color: #eef7ff; font-size: clamp(1.4rem, 2vw, 1.9rem); line-height: 1.25; }
 .project-card p { margin: 0; color: #b9c9de; font-size: 1rem; }
-main:has(> .card + .card) { display: grid; grid-template-columns: minmax(0, 2fr) minmax(220px, .8fr); align-items: start; gap: 24px; width: min(100%, 1080px); margin-inline: auto; }
-main:has(> .card + .card) > .card { width: 100%; margin: 0; }
+
+main:has(> .card + .card) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px;
+    width: min(100%, 1080px);
+    margin-inline: auto;
+}
+
+main:has(> .card + .card) > .card {
+    width: 100%;
+    margin: 0;
+}
 
 @media (min-width: 700px) { .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } }
 @media (min-width: 1100px) { .projects { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (max-width: 700px) { main:has(> .card + .card) { grid-template-columns: 1fr; } }
+@media (max-width: 700px) {
+    main:has(> .card + .card) { grid-template-columns: 1fr; }
+}
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     body::before, body::after { animation: none; }

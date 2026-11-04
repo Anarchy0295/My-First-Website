@@ -1,15 +1,16 @@
-/* Futuristic digital interface */
+/* Modern neon interface: electric pink + digital blue */
 :root {
     color-scheme: dark;
-    --page: #100713;
-    --surface: rgba(31, 16, 36, 0.78);
-    --surface-strong: rgba(31, 16, 36, 0.94);
-    --text: #fff0fa;
-    --muted: #c5aabb;
-    --pink: #ff5ec4;
-    --violet: #b58aff;
-    --line: rgba(255, 94, 196, 0.3);
-    --glow: 0 0 28px rgba(255, 94, 196, 0.16);
+    --page: #070b16;
+    --surface: rgba(13, 20, 38, 0.78);
+    --surface-strong: rgba(12, 18, 34, 0.94);
+    --text: #edf5ff;
+    --muted: #9eacc4;
+    --pink: #ff4fd8;
+    --blue: #39d9ff;
+    --line: rgba(57, 217, 255, 0.22);
+    --pink-glow: 0 0 30px rgba(255, 79, 216, 0.16);
+    --blue-glow: 0 0 30px rgba(57, 217, 255, 0.13);
 }
 
 * {
@@ -26,19 +27,19 @@ body {
     margin: 0;
     padding: clamp(16px, 4vw, 40px);
     color: var(--text);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Inter, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--page);
     background-image:
-        radial-gradient(ellipse at 15% 0%, rgba(181, 65, 145, 0.28), transparent 42%),
-        radial-gradient(ellipse at 85% 22%, rgba(106, 61, 184, 0.2), transparent 38%),
-        linear-gradient(rgba(255, 94, 196, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 94, 196, 0.04) 1px, transparent 1px);
-    background-size: auto, auto, 42px 42px, 42px 42px;
+        radial-gradient(ellipse at 12% 0%, rgba(255, 79, 216, 0.16), transparent 38%),
+        radial-gradient(ellipse at 88% 16%, rgba(57, 217, 255, 0.14), transparent 36%),
+        linear-gradient(rgba(99, 145, 190, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 145, 190, 0.045) 1px, transparent 1px);
+    background-size: auto, auto, 48px 48px, 48px 48px;
     background-attachment: fixed;
 }
 
 p {
-    color: #e5d5e0;
+    color: #c4d0e2;
     line-height: 1.75;
 }
 
@@ -48,14 +49,14 @@ img {
     height: auto;
     margin: 16px 0;
     padding: 6px;
-    border: 1px solid rgba(255, 94, 196, 0.6);
+    border: 1px solid rgba(57, 217, 255, 0.42);
     border-radius: 14px;
-    background: rgba(255, 94, 196, 0.08);
-    box-shadow: var(--glow);
+    background: rgba(57, 217, 255, 0.06);
+    box-shadow: var(--blue-glow);
 }
 
 a {
-    color: var(--pink);
+    color: var(--blue);
     font-weight: 650;
     text-decoration: none;
     text-underline-offset: 4px;
@@ -63,9 +64,9 @@ a {
 }
 
 a:hover {
-    color: #ffd1ef;
+    color: #b7f4ff;
     text-decoration: underline;
-    text-shadow: 0 0 14px rgba(255, 94, 196, 0.75);
+    text-shadow: 0 0 14px rgba(57, 217, 255, 0.65);
 }
 
 a:focus-visible {
@@ -76,22 +77,22 @@ a:focus-visible {
 
 #main-header,
 .card {
-    width: min(100%, 1040px);
+    width: min(100%, 1080px);
     margin-right: auto;
     margin-left: auto;
     border: 1px solid var(--line);
     background: var(--surface);
-    box-shadow: var(--glow), 0 24px 70px rgba(0, 0, 0, 0.28);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--blue-glow), 0 24px 70px rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
 #main-header {
     position: relative;
     overflow: hidden;
     margin-bottom: 24px;
-    padding: clamp(24px, 5vw, 42px);
-    border-radius: 20px;
+    padding: clamp(24px, 5vw, 46px);
+    border-radius: 22px;
 }
 
 #main-header::before {
@@ -100,18 +101,18 @@ a:focus-visible {
     right: 8%;
     left: 8%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--pink), var(--violet), transparent);
+    background: linear-gradient(90deg, transparent, var(--pink), var(--blue), transparent);
     content: '';
 }
 
 #main-header h1 {
     margin: 0 0 24px;
-    color: #fff4fb;
+    color: #f5f8ff;
     font-size: clamp(2.5rem, 7vw, 5rem);
-    font-weight: 750;
+    font-weight: 760;
     letter-spacing: -0.065em;
     line-height: 1.05;
-    text-shadow: 0 0 32px rgba(255, 94, 196, 0.25);
+    text-shadow: 0 0 32px rgba(57, 217, 255, 0.2);
 }
 
 #main-header nav ul,
@@ -127,7 +128,7 @@ a:focus-visible {
 #main-header nav a {
     display: inline-block;
     padding: 8px 0;
-    color: #ead9e5;
+    color: #c6d3e8;
     font-size: 0.98rem;
     font-weight: 650;
 }
@@ -137,8 +138,8 @@ a:focus-visible {
 }
 
 .card {
-    padding: clamp(24px, 5vw, 42px);
-    border-radius: 20px;
+    padding: clamp(24px, 5vw, 44px);
+    border-radius: 22px;
     background-color: var(--surface-strong);
 }
 
@@ -148,16 +149,17 @@ a:focus-visible {
     font-size: clamp(2rem, 5vw, 3.25rem);
     letter-spacing: -0.045em;
     line-height: 1.15;
+    text-shadow: 0 0 24px rgba(255, 79, 216, 0.16);
 }
 
 .card h3 {
     margin: 0 0 10px;
-    color: #e5d5ff;
+    color: var(--blue);
     font-size: 1.55rem;
 }
 
 footer {
-    width: min(100%, 1040px);
+    width: min(100%, 1080px);
     margin: 0 auto;
     padding: 24px 12px 8px;
     color: var(--muted);
@@ -180,10 +182,10 @@ footer {
     position: relative;
     overflow: hidden;
     padding: 22px;
-    border: 1px solid rgba(181, 138, 255, 0.38);
+    border: 1px solid rgba(57, 217, 255, 0.2);
     border-radius: 16px;
-    background: linear-gradient(145deg, rgba(47, 25, 54, 0.9), rgba(25, 14, 31, 0.94));
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, rgba(19, 32, 55, 0.88), rgba(11, 17, 32, 0.94));
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
     transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
 
@@ -193,26 +195,26 @@ footer {
     left: 22px;
     width: 58px;
     height: 2px;
-    background: linear-gradient(90deg, var(--pink), var(--violet));
+    background: linear-gradient(90deg, var(--pink), var(--blue));
     content: '';
 }
 
 .project-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(255, 94, 196, 0.7);
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32), var(--glow);
+    border-color: rgba(255, 79, 216, 0.58);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34), var(--pink-glow), var(--blue-glow);
 }
 
 .project-card h3 {
     margin: 0 0 8px;
-    color: #f3e5ff;
+    color: #eef7ff;
     font-size: clamp(1.4rem, 2vw, 1.9rem);
     line-height: 1.25;
 }
 
 .project-card p {
     margin: 0;
-    color: #e0cdda;
+    color: #b9c9de;
     font-size: 1rem;
 }
 

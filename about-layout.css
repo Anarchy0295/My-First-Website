@@ -12,19 +12,8 @@ main:has(> .card + .card) > .card {
     height: 100%;
 }
 
-/* Make the goals card half as wide while keeping it aligned to the right side. */
-main:has(> .card + .card) > .card:nth-child(2) {
-    width: 50%;
-    justify-self: end;
-    align-self: start;
-}
-
 @media (max-width: 700px) {
     main:has(> .card + .card) {
         grid-template-columns: 1fr;
-    }
-
-    main:has(> .card + .card) > .card:nth-child(2) {
-        width: 100%;
     }
 }

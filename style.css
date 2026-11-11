@@ -44,17 +44,50 @@ body {
     background-image:
         radial-gradient(ellipse at 12% 0%, rgba(255, 79, 216, 0.16), transparent 38%),
         radial-gradient(ellipse at 88% 16%, rgba(57, 217, 255, 0.14), transparent 36%),
-        radial-gradient(ellipse at 50% 45%, rgba(57, 217, 255, 0.035), transparent 58%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='280' viewBox='0 0 160 280'%3E%3Cpath d='M34 0 L42 23 L31 39 L45 55 L36 73 L49 87 L39 105 L52 121 L42 139 L57 155 L46 174 L60 190 L49 210 L64 225 L54 244 L68 261 L61 280 M126 0 L117 19 L129 34 L115 50 L122 66 L108 84 L117 100 L103 117 L111 135 L96 152 L104 171 L90 189 L98 207 L83 225 L91 242 L78 260 L84 280' fill='none' stroke='rgba(57,217,255,0.07)' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M34 0 L42 23 L31 39 L45 55 L36 73 L49 87 L39 105 L52 121 L42 139 L57 155 L46 174 L60 190 L49 210 L64 225 L54 244 L68 261 L61 280 M126 0 L117 19 L129 34 L115 50 L122 66 L108 84 L117 100 L103 117 L111 135 L96 152 L104 171 L90 189 L98 207 L83 225 L91 242 L78 260 L84 280' fill='none' stroke='rgba(57,217,255,0.32)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M38 47 L22 57 L17 70 M46 90 L64 99 L70 113 M48 157 L31 167 L27 181 M58 225 L75 215 L81 202 M118 42 L101 51 L94 65 M111 135 L128 144 L134 158 M93 190 L77 181 L70 168 M86 244 L103 235 L109 220' fill='none' stroke='rgba(105,225,255,0.22)' stroke-width='0.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-size: auto, auto, auto, 160px 280px;
-    background-position: 0 0, 0 0, 0 0, 0 0;
+        radial-gradient(ellipse at 50% 45%, rgba(57, 217, 255, 0.035), transparent 58%);
     background-attachment: fixed;
-    animation: lightning-drift 32s linear infinite;
 }
 
-@keyframes lightning-drift {
-    from { background-position: 0 0, 0 0, 0 0, 0 0; }
-    to { background-position: 0 0, 0 0, 0 0, 0 280px; }
+/* Jagged forked bolts, with a soft colored halo and a bright central channel. */
+body::before {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 1000' preserveAspectRatio='xMidYMid slice'%3E%3Cdefs%3E%3Cfilter id='glow' x='-100%25' y='-50%25' width='300%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='11'/%3E%3C/filter%3E%3C/defs%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M300 -40 L330 90 L294 178 L348 255 L313 340 L375 420 L337 515 L395 596 L355 682 L420 770 L386 860 L435 1040 M330 90 L248 145 L220 220 M348 255 L428 293 L465 360 M375 420 L298 467 L263 538 M395 596 L474 642 L500 706 M420 770 L340 813 L317 875' stroke='%2339d9ff' stroke-opacity='.44' stroke-width='13' filter='url(%23glow)'/%3E%3Cpath d='M300 -40 L330 90 L294 178 L348 255 L313 340 L375 420 L337 515 L395 596 L355 682 L420 770 L386 860 L435 1040 M330 90 L248 145 L220 220 M348 255 L428 293 L465 360 M375 420 L298 467 L263 538 M395 596 L474 642 L500 706 M420 770 L340 813 L317 875' stroke='%23b8f5ff' stroke-opacity='.82' stroke-width='2'/%3E%3Cpath d='M1040 -60 L1008 68 L1046 155 L988 242 L1026 325 L966 405 L1007 494 L947 575 L986 658 L930 742 L962 835 L915 1040 M1008 68 L1090 115 L1121 185 M988 242 L909 280 L874 347 M966 405 L1045 449 L1078 520 M947 575 L867 622 L841 690 M930 742 L1004 788 L1033 854' stroke='%2339d9ff' stroke-opacity='.38' stroke-width='15' filter='url(%23glow)'/%3E%3Cpath d='M1040 -60 L1008 68 L1046 155 L988 242 L1026 325 L966 405 L1007 494 L947 575 L986 658 L930 742 L962 835 L915 1040 M1008 68 L1090 115 L1121 185 M988 242 L909 280 L874 347 M966 405 L1045 449 L1078 520 M947 575 L867 622 L841 690 M930 742 L1004 788 L1033 854' stroke='%23d2f9ff' stroke-opacity='.74' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.52;
+    filter: drop-shadow(0 0 16px rgba(57, 217, 255, 0.24));
+    animation: lightning-flicker 11s linear infinite;
+}
+
+/* A faint, brief ambient flash adds depth without making the whole page pulse. */
+body::after {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    content: '';
+    background: radial-gradient(ellipse at 24% 18%, rgba(174, 241, 255, 0.2), transparent 42%);
+    opacity: 0;
+    animation: storm-flash 11s linear infinite;
+}
+
+@keyframes lightning-flicker {
+    0%, 15%, 17%, 39%, 41%, 68%, 70%, 100% { opacity: 0.35; }
+    16% { opacity: 0.68; }
+    40% { opacity: 0.82; }
+    69% { opacity: 0.62; }
+}
+
+@keyframes storm-flash {
+    0%, 15%, 17%, 39%, 41%, 68%, 70%, 100% { opacity: 0; }
+    16% { opacity: 0.2; }
+    40% { opacity: 0.12; }
+    69% { opacity: 0.16; }
 }
 
 h1,

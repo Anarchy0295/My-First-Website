@@ -1,0 +1,4 @@
+/* Bring Contact Info closer to My Goals on the About page. */
+main:has(> .card + .card) {
+    row-gap: var(--space-1);
+}

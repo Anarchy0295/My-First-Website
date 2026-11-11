@@ -44,16 +44,17 @@ body {
     background-image:
         radial-gradient(ellipse at 12% 0%, rgba(255, 79, 216, 0.16), transparent 38%),
         radial-gradient(ellipse at 88% 16%, rgba(57, 217, 255, 0.14), transparent 36%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='64' viewBox='0 0 96 64'%3E%3Cpath d='M0 16 L16 4 L32 16 L48 4 L64 16 L80 4 L96 16 M0 48 L16 36 L32 48 L48 36 L64 48 L80 36 L96 48' stroke='rgba(57,217,255,0.22)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-    background-size: auto, auto, 96px 64px;
-    background-position: 0 0, 0 0, 0 0;
+        radial-gradient(ellipse at 50% 45%, rgba(57, 217, 255, 0.035), transparent 58%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='280' viewBox='0 0 160 280'%3E%3Cpath d='M34 0 L42 23 L31 39 L45 55 L36 73 L49 87 L39 105 L52 121 L42 139 L57 155 L46 174 L60 190 L49 210 L64 225 L54 244 L68 261 L61 280 M126 0 L117 19 L129 34 L115 50 L122 66 L108 84 L117 100 L103 117 L111 135 L96 152 L104 171 L90 189 L98 207 L83 225 L91 242 L78 260 L84 280' fill='none' stroke='rgba(57,217,255,0.07)' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M34 0 L42 23 L31 39 L45 55 L36 73 L49 87 L39 105 L52 121 L42 139 L57 155 L46 174 L60 190 L49 210 L64 225 L54 244 L68 261 L61 280 M126 0 L117 19 L129 34 L115 50 L122 66 L108 84 L117 100 L103 117 L111 135 L96 152 L104 171 L90 189 L98 207 L83 225 L91 242 L78 260 L84 280' fill='none' stroke='rgba(57,217,255,0.32)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M38 47 L22 57 L17 70 M46 90 L64 99 L70 113 M48 157 L31 167 L27 181 M58 225 L75 215 L81 202 M118 42 L101 51 L94 65 M111 135 L128 144 L134 158 M93 190 L77 181 L70 168 M86 244 L103 235 L109 220' fill='none' stroke='rgba(105,225,255,0.22)' stroke-width='0.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: auto, auto, auto, 160px 280px;
+    background-position: 0 0, 0 0, 0 0, 0 0;
     background-attachment: fixed;
-    animation: lightning-drift 24s linear infinite;
+    animation: lightning-drift 32s linear infinite;
 }
 
 @keyframes lightning-drift {
-    from { background-position: 0 0, 0 0, 0 0; }
-    to { background-position: 0 0, 0 0, 96px 64px; }
+    from { background-position: 0 0, 0 0, 0 0, 0 0; }
+    to { background-position: 0 0, 0 0, 0 0, 0 280px; }
 }
 
 h1,

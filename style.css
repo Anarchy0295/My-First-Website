@@ -576,7 +576,7 @@ body.about-page main img {
     grid-template-areas:
       "about goals"
       "about contact";
-    row-gap: 5px;
+    row-gap: 0px;
   }
 
   body.about-page .card,
@@ -592,6 +592,6 @@ body.about-page main img {
     grid-template-areas:
       "about goals"
       "about contact";
-   row-gap: 5px;
+   row-gap: 0px;
   }
 }

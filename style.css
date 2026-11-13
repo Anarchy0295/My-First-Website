@@ -46,7 +46,7 @@ body::before {
     z-index: 0;
     pointer-events: none;
     content: '';
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 1000' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' stroke='rgba(255,255,255,0.9)'%3E%3Cg opacity='0.25'%3E%3Cpath d='M690 0L520 420h170L474 1000l426-512H710l300-488z'/%3E%3Cpath d='M930 220L810 500h140L755 860l340-360h-160l186-280z'/%3E%3Cpath d='M1020 100L900 370h150L790 760l170-210h-120L1120 100z'/%3E%3C/g%3E%3Cg stroke='rgba(32,223,255,0.9)'%3E%3Cpath d='M380 0L220 390h166L180 1000l380-510H410l174-490z'/%3E%3Cpath d='M680 120L560 420h120L480 820l260-330H610l130-370z'/%3E%3Cpath d='M1120 0L980 390h170L760 1000l440-495h-180l220-505z'/%3E%3C/g%3E%3Cg stroke='rgba(255,43,214,0.8)'%3E%3Cpath d='M580 150L430 510h150L370 990l240-340H500l120-500z'/%3E%3Cpath d='M915 70L790 380h130L705 740l225-245h-120l125-425z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 1000' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round' stroke='%23d9f8ff' stroke-width='2.2'%3E%3Cpath d='M0 800 L170 540 L260 640 L420 400 L512 535 L660 100 L780 470 L960 300 L1060 420 L1160 190 L1440 1000'/%3E%3Cpath d='M350 820 L460 660 L520 770 L650 500 L760 620 L820 540 L900 760 L980 670 L1100 820'/%3E%3Cpath d='M1170 910 L1215 770 L1275 860 L1340 680 L1410 780 L1440 730'/%3E%3C/g%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -222,5 +222,121 @@ main:has(> .card + .card) > section:nth-child(3) p { margin: 0; }
     *, *::before, *::after {
         scroll-behavior: auto !important; transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+    }
+}
+
+/* About-page layout tuned for 320px phones, 768px tablets, and 1200px desktops. */
+body.about-page main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "about"
+        "goals"
+        "contact";
+    gap: clamp(16px, 2.5vw, 32px);
+    width: min(100%, 1080px);
+    margin-inline: auto;
+}
+
+body.about-page main > section {
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+body.about-page main > section:first-child { grid-area: about; }
+body.about-page main > section:nth-child(2) { grid-area: goals; }
+
+body.about-page main > section:nth-child(3) {
+    grid-area: contact;
+    min-width: 0;
+    padding: clamp(16px, 2.5vw, 32px);
+    border: 1px solid var(--line);
+    border-radius: var(--space-2);
+    background: linear-gradient(145deg, rgba(19, 24, 55, 0.92), rgba(11, 12, 32, 0.96));
+    box-shadow: var(--blue-glow), 0 var(--space-1) var(--space-3) rgba(0, 0, 0, 0.24);
+}
+
+body.about-page main > section:nth-child(3) h2 {
+    margin: 0 0 var(--space-2);
+    color: var(--pink);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.15;
+}
+
+body.about-page main p,
+body.about-page main li,
+body.about-page main a {
+    overflow-wrap: anywhere;
+}
+
+body.about-page main img {
+    width: min(100%, 240px);
+    height: auto;
+}
+
+/* 320px phone: single column, compact gutters, and safely wrapping navigation. */
+@media (max-width: 600px) {
+    body.about-page { padding: 12px; }
+
+    body.about-page #main-header {
+        padding: 24px 16px;
+    }
+
+    body.about-page #main-header h1 {
+        font-size: clamp(2rem, 10vw, 2.5rem);
+        overflow-wrap: anywhere;
+    }
+
+    body.about-page #main-header nav ul {
+        gap: 8px 16px;
+    }
+
+    body.about-page #main-header nav a {
+        font-size: 0.95rem;
+    }
+
+    body.about-page .card,
+    body.about-page main > section:nth-child(3) {
+        padding: 16px;
+    }
+
+    body.about-page main {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "about"
+            "goals"
+            "contact";
+        gap: 16px;
+    }
+}
+
+/* 768px tablet: two balanced columns; About spans the adjacent right-hand panels. */
+@media (min-width: 601px) and (max-width: 999px) {
+    body.about-page { padding: 20px; }
+
+    body.about-page main {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        grid-template-areas:
+            "about goals"
+            "about contact";
+        gap: 20px;
+    }
+
+    body.about-page .card,
+    body.about-page main > section:nth-child(3) {
+        padding: 20px;
+    }
+}
+
+/* 1200px desktop: wider reading column and a compact goals/contact sidebar. */
+@media (min-width: 1000px) {
+    body.about-page main {
+        grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+        grid-template-areas:
+            "about goals"
+            "about contact";
+        gap: 32px;
     }
 }

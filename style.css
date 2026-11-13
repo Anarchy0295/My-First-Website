@@ -324,7 +324,7 @@ main:has(> .card + .card) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: min-content min-content;
     align-items: start;
-    gap: var(--space-1);
+    gap: var(--space-3);
     width: min(100%, 1080px);
     margin-inline: auto;
 }
@@ -415,7 +415,7 @@ main:has(> .card + .card) > section:nth-child(3) p {
     main:has(> .card + .card) {
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
         grid-template-areas: "about goals" "about contact";
-        gap: 12px;
+        gap: 20px;
     }
 
     main:has(> .card + .card) > .card:first-child {
@@ -446,7 +446,7 @@ main:has(> .card + .card) > section:nth-child(3) p {
     main:has(> .card + .card) {
         grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
         grid-template-areas: "about goals" "about contact";
-        gap: 12px;
+        gap: 32px;
     }
 
     .projects {

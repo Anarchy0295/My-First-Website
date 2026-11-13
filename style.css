@@ -55,7 +55,7 @@ body::before {
     z-index: 0;
     pointer-events: none;
     content: '';
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 1000' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg stroke='%2320dfff' stroke-width='3' opacity='.9'%3E%3Cpath d='M120 0l30 130-25 90 50 80-35 90 55 80-35 90 50 100-32 100 32 110 0 130M500 0l40 115-30 115 70 100-40 110 70 105-35 90 55 100-30 100 45 165M940 0l40 118-30 107 60 100-35 93 65 106-35 106 55 106-30 100 40 164M1260 0l38 130-23 95 60 90-35 95 65 106-35 95 60 110-35 100 40 179'/%3E%3C/g%3E%3Cg stroke='%23ff2bd6' stroke-width='2.5' opacity='.82'%3E%3Cpath d='M210 0l30 150-20 100 58 100-33 100 60 110-37 90 52 110-33 110 42 130M620 0l40 140-28 115 64 105-36 110 66 105-36 110 54 100-34 110 50 105M1080 0l38 145-28 105 63 100-38 118 68 108-39 110 57 105-32 100 46 109'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 1000' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'[%...]
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -324,7 +324,7 @@ main:has(> .card + .card) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: min-content min-content;
     align-items: start;
-    gap: var(--space-3);
+    gap: var(--space-1);
     width: min(100%, 1080px);
     margin-inline: auto;
 }
@@ -415,7 +415,7 @@ main:has(> .card + .card) > section:nth-child(3) p {
     main:has(> .card + .card) {
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
         grid-template-areas: "about goals" "about contact";
-        gap: 20px;
+        gap: 12px;
     }
 
     main:has(> .card + .card) > .card:first-child {
@@ -446,7 +446,7 @@ main:has(> .card + .card) > section:nth-child(3) p {
     main:has(> .card + .card) {
         grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
         grid-template-areas: "about goals" "about contact";
-        gap: 32px;
+        gap: 12px;
     }
 
     .projects {

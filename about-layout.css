@@ -15,6 +15,7 @@ main > section {
     min-width: 0;
     width: 100%;
     margin: 0;
+    overflow-wrap: anywhere;
 }
 
 main > section:first-child { grid-area: about; }

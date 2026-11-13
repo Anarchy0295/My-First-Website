@@ -577,7 +577,6 @@ body.about-page main img {
       "about goals"
       "about contact";
     row-gap: 5px;
-    column-gap: 20px;
   }
 
   body.about-page .card,
@@ -594,6 +593,5 @@ body.about-page main img {
       "about goals"
       "about contact";
    row-gap: 5px;
-   column-gap: 20px;
   }
 }

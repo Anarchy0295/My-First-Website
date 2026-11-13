@@ -6,7 +6,7 @@
   <title>Mike Frazer - Projects</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body> 
+<body>
 
   <header id="main-header">
     <h1>Mike Frazer</h1>
@@ -45,6 +45,31 @@
   <footer>
     <p>&copy; 2026 Mike Frazer. All rights reserved.</p>
   </footer>
+
+<script>
+  (() => {
+    const body = document.body;
+    const updateMouse = (event) => {
+      const x = ((event.clientX / window.innerWidth) * 100).toFixed(2);
+      const y = ((event.clientY / window.innerHeight) * 100).toFixed(2);
+      body.style.setProperty('--mouse-x', `${x}%`);
+      body.style.setProperty('--mouse-y', `${y}%`);
+    };
+
+    const triggerStrike = () => {
+      const intensity = (0.35 + Math.random() * 0.65).toFixed(2);
+      body.style.setProperty('--storm-intensity', intensity);
+      body.classList.remove('storm-strike');
+      void body.offsetWidth;
+      body.classList.add('storm-strike');
+      setTimeout(() => body.classList.remove('storm-strike'), 260 + Math.random() * 220);
+    };
+
+    window.addEventListener('pointermove', updateMouse, { passive: true });
+    window.addEventListener('pointerdown', () => triggerStrike(), { passive: true });
+    setInterval(triggerStrike, 2000 + Math.random() * 3000);
+  })();
+</script>
 
 </body>
 </html>

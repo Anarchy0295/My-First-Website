@@ -17,12 +17,12 @@
         <li><a href="projects.html">Projects</a></li>
       </ul>
     </nav>
-  </header>
+</header>
 
 <main>
     <section class="card">
       <h2>Welcome</h2>
-      <p>Hey, glad you’re here! I’m Mike, and this is where I share my interests, projects, and what I’m learning. Whether you’re into gaming, cybersecurity, or just curious to see what I’m working on, make yourself at home and take a look around. I’m excited to have you here!</p>
+      <p>Hey, glad you’re here! I’m Mike, and this is where I share my interests, projects, and what I’m learning. Whether you’re into gaming, cybersecurity, or just curious to see what I’m building, this space is all about my growth and the things I’m passionate about.</p>
 
       <div class="feature-images" aria-label="Gaming and cybersecurity">
         <figure>
@@ -35,11 +35,46 @@
         </figure>
       </div>
     </section>
-  </main>
+</main>
 
 <footer>
     <p>&copy; 2026 Mike Frazer. All rights reserved.</p>
-  </footer>
+</footer>
+
+<script>
+  (() => {
+    const body = document.body;
+    const updateMouse = (event) => {
+      const x = ((event.clientX / window.innerWidth) * 100).toFixed(2);
+      const y = ((event.clientY / window.innerHeight) * 100).toFixed(2);
+      body.style.setProperty('--mouse-x', `${x}%`);
+      body.style.setProperty('--mouse-y', `${y}%`);
+    };
+
+    const triggerStrike = () => {
+      const intensity = (0.35 + Math.random() * 0.65).toFixed(2);
+      body.style.setProperty('--storm-intensity', intensity);
+      body.classList.remove('storm-strike');
+      void body.offsetWidth;
+      body.classList.add('storm-strike');
+      setTimeout(() => body.classList.remove('storm-strike'), 260 + Math.random() * 220);
+    };
+
+    let strikeTimer = null;
+    const scheduleStrike = () => {
+      const delay = 1100 + Math.random() * 3500;
+      strikeTimer = setTimeout(() => {
+        triggerStrike();
+        scheduleStrike();
+      }, delay);
+    };
+
+    window.addEventListener('pointermove', updateMouse, { passive: true });
+    window.addEventListener('pointerdown', () => triggerStrike(), { passive: true });
+    scheduleStrike();
+    triggerStrike();
+  })();
+</script>
 
 </body>
 </html>

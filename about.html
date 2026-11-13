@@ -23,7 +23,7 @@
     <section class="card">
       <h2>About Me</h2>
       <img src="IMG_0277.jpeg" alt="Mike in a pink and skull shirt taking a photo">
-      <p>A few things you should know about me are: I am very caring and loving, no matter what anyone says about me. I am a very hard worker, and when I put my mind to it, the results speak for themselves. Lastly, I NEVER give up no matter what.</p>
+      <p>A few things you should know about me are: I am very caring and loving, no matter what anyone says about me. I am a very hard worker, and when I put my mind to it, the results speak for themselves.</p>
 
       <h3>My Hobbies</h3>
       <ul>
@@ -32,28 +32,50 @@
         <li>Gaming</li>
         <li>Soccer</li>
       </ul>
-      <p>My hobbies include gaming, cooking and baking, coding, and playing soccer. I enjoy gaming because it allows me to have fun, challenge myself, and explore different worlds. Cooking and baking give me a chance to be creative and experiment with new recipes while making delicious food. I also enjoy coding because it allows me to solve problems, learn new skills, and create things using technology. Lastly, soccer is one of my favorite hobbies because I enjoy being active, working as part of a team, and improving my skills. Overall, these hobbies allow me to express my creativity, challenge myself, and have fun in different ways.</p>
+      <p>My hobbies include gaming, cooking and baking, coding, and playing soccer. I enjoy gaming because it allows me to have fun, challenge myself, and explore different worlds. Cooking and baking help me relax and be creative, while coding gives me a way to build things and solve problems. Soccer is one of my favorite ways to stay active and competitive.</p>
 
       <h3>Where I Grew Up</h3>
-      <p>I have lived in many different places in my life. Some places I have lived are; California, Vegas, and Utah.</p>
+      <p>I have lived in many different places in my life. Some places I have lived are California, Vegas, and Utah.</p>
     </section>
 
     <section class="card">
       <h2>My Goals</h2>
-      <p>My goals for the future are to own two cars and a house, and to travel to the countries I've always wanted to visit, such as Japan, Australia, and Egypt.
-      I also plan on settling down and hopefully being able to have kids of my own one day, along with being able to travel with my family to many places too.</p>
+      <p>My goals for the future are to own two cars and a house, and to travel to the countries I’ve always wanted to visit, such as Japan, Australia, and Egypt. I also plan on settling down and hopefully being able to have kids of my own one day, along with being able to travel with my family to many places too.</p>
     </section>
 
     <section>
       <h2>Contact Info</h2>
-      <p>If you would like more information, please feel free to reach out to one of the two emails provided
-      mfrazer@my.compus.edu or
-      mikefrazer19@gmail.com</p>
+      <p>If you would like more information, please feel free to reach out to one of the two emails provided: mfrazer@my.compus.edu or mikefrazer19@gmail.com</p>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2026 Mike Frazer. All rights reserved.</p>
   </footer>
+
+<script>
+  (() => {
+    const body = document.body;
+    const updateMouse = (event) => {
+      const x = ((event.clientX / window.innerWidth) * 100).toFixed(2);
+      const y = ((event.clientY / window.innerHeight) * 100).toFixed(2);
+      body.style.setProperty('--mouse-x', `${x}%`);
+      body.style.setProperty('--mouse-y', `${y}%`);
+    };
+
+    const triggerStrike = () => {
+      const intensity = (0.35 + Math.random() * 0.65).toFixed(2);
+      body.style.setProperty('--storm-intensity', intensity);
+      body.classList.remove('storm-strike');
+      void body.offsetWidth;
+      body.classList.add('storm-strike');
+      setTimeout(() => body.classList.remove('storm-strike'), 260 + Math.random() * 220);
+    };
+
+    window.addEventListener('pointermove', updateMouse, { passive: true });
+    window.addEventListener('pointerdown', () => triggerStrike(), { passive: true });
+    setInterval(triggerStrike, 1800 + Math.random() * 3200);
+  })();
+</script>
 </body>
 </html>

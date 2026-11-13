@@ -48,20 +48,20 @@ body {
     background-attachment: fixed;
 }
 
-/* Multiple uneven, branching bolts in alternating neon pink and blue. */
+/* Vertical lightning: tall, branching bolts with cyan/pink energy. */
 body::before {
     position: fixed;
     inset: 0;
     z-index: 0;
     pointer-events: none;
     content: '';
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 1000' preserveAspectRatio='xMidYMid slice'%3E%3Cdefs%3E%3Cfilter id='g' x='-120%25' y='-60%25' width='240%25' height='200%25'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='10'/%3E%3C/filter%3E%3Cg filter='url(%23g)'%3E%3Cpath d='M-80 1000 L200 320 L370 1000 L520 540 L700 1000 L860 300 L1040 1000 L1200 560 L1460 1000 L1460 1000 L-80 1000 Z' fill='none' stroke='%23ff2bd6' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M-60 1000 L210 460 L360 1000 L580 240 L760 1000 L900 580 L1120 1000 L1320 400 L1460 1000' fill='none' stroke='%2320dfff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M200 0 L260 300 L340 150 L420 480 L520 240 L610 520 L720 200 L820 680 L980 280 L1100 620 L1240 360 L1380 660 L1460 0' fill='none' stroke='%23ff2bd6' stroke-opacity='0.8' stroke-width='4' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 1000' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg stroke='%2320dfff' stroke-width='3' opacity='.9'%3E%3Cpath d='M120 0L150 130 125 220 175 300 140 390 195 470 160 560 210 660 178 760 210 1000'/%3E%3Cpath d='M290 0L325 140 295 230 350 325 315 420 360 520 325 610 372 720 340 820 375 1000'/%3E%3Cpath d='M500 0L540 115 510 230 580 330 540 440 610 545 575 635 630 735 600 835 645 1000'/%3E%3Cpath d='M720 0L760 110 730 210 790 305 755 405 820 505 785 610 840 720 810 830 855 1000'/%3E%3Cpath d='M940 0L980 118 950 225 1010 325 975 418 1040 524 1005 630 1060 736 1030 836 1070 1000'/%3E%3Cpath d='M1160 0L1198 130 1175 225 1235 315 1200 410 1260 520 1225 615 1285 710 1250 820 1300 1000'/%3E%3Cpath d='M80 180L118 220 108 260 150 310'/%3E%3Cpath d='M255 205L290 245 280 292 323 344'/%3E%3Cpath d='M470 260L515 305 500 352 542 405'/%3E%3Cpath d='M680 270L722 315 708 360 752 418'/%3E%3Cpath d='M900 250L944 300 930 350 978 405'/%3E%3Cpath d='M1110 210L1150 255 1138 305 1183 360'/%3E%3C/g%3E%3Cg stroke='%23ff2bd6' stroke-width='2.7' opacity='.82'%3E%3Cpath d='M190 0L220 150 200 250 258 350 225 450 285 560 248 650 300 760 268 870 310 1000'/%3E%3Cpath d='M405 0L445 135 415 250 475 350 440 460 504 570 468 670 525 780 492 890 540 1000'/%3E%3Cpath d='M620 0L660 140 632 255 696 360 660 470 726 575 690 680 744 790 712 900 760 1000'/%3E%3Cpath d='M840 0L880 150 852 255 918 360 882 470 952 580 915 685 972 790 940 900 992 1000'/%3E%3Cpath d='M1060 0L1098 145 1070 250 1133 350 1095 468 1165 580 1126 690 1188 800 1155 900 1202 1000'/%3E%3Cpath d='M250 150L290 200 278 245 322 300'/%3E%3Cpath d='M465 180L505 235 492 282 536 336'/%3E%3Cpath d='M685 220L726 270 712 320 756 375'/%3E%3Cpath d='M905 210L950 260 935 310 982 366'/%3E%3Cpath d='M1120 165L1160 215 1148 265 1190 323'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    opacity: 0.68;
-    filter: drop-shadow(0 0 18px rgba(32, 223, 255, 0.34)) drop-shadow(0 0 16px rgba(255, 43, 214, 0.28));
-    animation: lightning-flicker 9s steps(1, end) infinite;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 20px rgba(32, 223, 255, 0.4)) drop-shadow(0 0 18px rgba(255, 43, 214, 0.3));
+    animation: lightning-flicker 7s steps(1, end) infinite;
 }
 
 /* Neon storm flashes blend pink and blue briefly, keeping content legible. */
@@ -75,23 +75,25 @@ body::after {
         radial-gradient(ellipse at 22% 24%, rgba(255, 43, 214, 0.2), transparent 42%),
         radial-gradient(ellipse at 76% 34%, rgba(32, 223, 255, 0.2), transparent 46%);
     opacity: 0;
-    animation: storm-flash 9s steps(1, end) infinite;
+    animation: storm-flash 7s steps(1, end) infinite;
 }
 
 @keyframes lightning-flicker {
-    0%, 9%, 11%, 29%, 31%, 55%, 57%, 78%, 80%, 100% { opacity: 0.48; }
-    10% { opacity: 0.92; }
-    30% { opacity: 0.78; }
-    56% { opacity: 0.96; }
-    79% { opacity: 0.84; }
+    0%, 8%, 10%, 21%, 23%, 39%, 41%, 63%, 65%, 82%, 84%, 100% { opacity: 0.42; }
+    9% { opacity: 0.96; }
+    22% { opacity: 0.8; }
+    40% { opacity: 0.98; }
+    64% { opacity: 0.76; }
+    83% { opacity: 0.9; }
 }
 
 @keyframes storm-flash {
-    0%, 9%, 11%, 29%, 31%, 55%, 57%, 78%, 80%, 100% { opacity: 0; }
-    10% { opacity: 0.2; }
-    30% { opacity: 0.1; }
-    56% { opacity: 0.16; }
-    79% { opacity: 0.12; }
+    0%, 8%, 10%, 21%, 23%, 39%, 41%, 63%, 65%, 82%, 84%, 100% { opacity: 0; }
+    9% { opacity: 0.24; }
+    22% { opacity: 0.12; }
+    40% { opacity: 0.18; }
+    64% { opacity: 0.12; }
+    83% { opacity: 0.2; }
 }
 
 h1,
